@@ -1,0 +1,1442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/2000px-Microsoft_logo.svg.png">
+
+  <title>
+    
+      Java macOS
+    
+  </title>
+  <meta name="description" content="Get started with SQL Server on macOS, Linux, and Windows.">
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/java/mac/step/2">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-62780441-15', 'auto');
+  ga('send', 'pageview');
+  $(document).ready(function() {
+      $("code").bind({
+          copy: function(event) {
+              ga("send", "event", {
+                  eventCategory: window.location.pathname,
+                  eventAction: "copy_code"
+              });
+         console.log("Copy");
+
+          }, 
+
+          cut: function(event) {
+              ga("send", "event", {
+                  eventCategory: window.location.pathname,
+                  eventAction: "copy_code"
+              });
+          }
+      })
+
+      $("a").click(function(event) {
+          ga("send", "event", {
+              eventCategory: window.location.pathname,
+              eventAction: "click_link",
+              eventLabel: event.target.href
+          });
+      })
+  });  
+  </script>
+
+
+
+</head>
+
+
+  <body>
+
+    <header class="sql-header sql-header--empty" role="banner">
+    <div class="sql-header-content">
+      <img class="sql-header-micro" src="/assets/images/micro-logo.png" alt="Microsoft logo">
+      
+        <div class="sql-menutop">
+          <a class="sql-menutop-link" href="/">Get started with SQL Server</a>
+          <div>
+            
+              
+              
+
+              <div class="sql-menutop-sub ">
+                  
+                    
+                      
+                      
+
+                        
+                          <span class="sql-menutop-link">C# </span>
+                        
+
+                        
+                    
+                      
+                      
+
+                        
+
+                        
+                          <div class="sql-menutop-items">
+                            
+                              
+                              
+                              
+
+                              <a class="sql-menutop-item " 
+                                href="/csharp/mac" 
+                                target="_self">
+                                macOS
+                                
+                              </a>
+                            
+                              
+                              
+                              
+
+                              <a class="sql-menutop-item " 
+                                href="/csharp/rhel" 
+                                target="_self">
+                                RHEL
+                                
+                              </a>
+                            
+                              
+                              
+                              
+
+                              <a class="sql-menutop-item " 
+                                href="/csharp/ubuntu" 
+                                target="_self">
+                                Ubuntu
+                                
+                              </a>
+                            
+                              
+                              
+                              
+
+                              <a class="sql-menutop-item " 
+                                href="/csharp/windows" 
+                                target="_self">
+                                Windows
+                                
+                              </a>
+                            
+                          </div>
+                        
+                    
+                  
+              </div>
+            
+              
+              
+
+              <div class="sql-menutop-sub  is-active ">
+                  
+                    
+                      
+                      
+
+                        
+                          <span class="sql-menutop-link">Java </span>
+                        
+
+                        
+                    
+                      
+                      
+
+                        
+
+                        
+                          <div class="sql-menutop-items">
+                            
+                              
+                              
+                              
+
+                              <a class="sql-menutop-item  is-active " 
+                                href="/java/mac" 
+                                target="_self">
+                                macOS
+                                
+                              </a>
+                            
+                              
+                              
+                              
+
+                              <a class="sql-menutop-item " 
+                                href="/java/rhel" 
+                                target="_self">
+                                RHEL
+                                
+                              </a>
+                            
+                              
+                              
+                              
+
+                              <a class="sql-menutop-item " 
+                                href="/java/ubuntu" 
+                                target="_self">
+                                Ubuntu
+                                
+                              </a>
+                            
+                              
+                              
+                              
+
+                              <a class="sql-menutop-item " 
+                                href="/java/sles" 
+                                target="_self">
+                                SLES
+                                
+                                  <i class="sql-new"></i>
+                                
+                              </a>
+                            
+                              
+                              
+                              
+
+                              <a class="sql-menutop-item " 
+                                href="/java/windows" 
+                                target="_self">
+                                Windows
+                                
+                              </a>
+                            
+                          </div>
+                        
+                    
+                  
+              </div>
+            
+              
+              
+
+              <div class="sql-menutop-sub ">
+                  
+                    
+                      
+                      
+
+                        
+                          <span class="sql-menutop-link">Node.js </span>
+                        
+
+                        
+                    
+                      
+                      
+
+                        
+
+                        
+                          <div class="sql-menutop-items">
+                            
+                              
+                              
+                              
+
+                              <a class="sql-menutop-item " 
+                                href="/node/mac" 
+                                target="_self">
+                                macOS
+                                
+                              </a>
+                            
+                              
+                              
+                              
+
+                              <a class="sql-menutop-item " 
+                                href="/node/rhel" 
+                                target="_self">
+                                RHEL
+                                
+                              </a>
+                            
+                              
+                              
+                              
+
+                              <a class="sql-menutop-item " 
+                                href="/node/ubuntu" 
+                                target="_self">
+                                Ubuntu
+                                
+                              </a>
+                            
+                              
+                              
+                              
+
+                              <a class="sql-menutop-item " 
+                                href="/node/sles" 
+                                target="_self">
+                                SLES
+                                
+                                  <i class="sql-new"></i>
+                                
+                              </a>
+                            
+                              
+                              
+                              
+
+                              <a class="sql-menutop-item " 
+                                href="/node/windows" 
+                                target="_self">
+                                Windows
+                                
+                              </a>
+                            
+                          </div>
+                        
+                    
+                  
+              </div>
+            
+              
+              
+
+              <div class="sql-menutop-sub ">
+                  
+                    
+                      
+                      
+
+                        
+                          <span class="sql-menutop-link">PHP </span>
+                        
+
+                        
+                    
+                      
+                      
+
+                        
+
+                        
+                          <div class="sql-menutop-items">
+                            
+                              
+                              
+                              
+
+                              <a class="sql-menutop-item " 
+                                href="/php/mac" 
+                                target="_self">
+                                macOS
+                                
+                              </a>
+                            
+                              
+                              
+                              
+
+                              <a class="sql-menutop-item " 
+                                href="/php/rhel" 
+                                target="_self">
+                                RHEL
+                                
+                              </a>
+                            
+                              
+                              
+                              
+
+                              <a class="sql-menutop-item " 
+                                href="/php/ubuntu" 
+                                target="_self">
+                                Ubuntu
+                                
+                              </a>
+                            
+                              
+                              
+                              
+
+                              <a class="sql-menutop-item " 
+                                href="/php/sles" 
+                                target="_self">
+                                SLES
+                                
+                                  <i class="sql-new"></i>
+                                
+                              </a>
+                            
+                              
+                              
+                              
+
+                              <a class="sql-menutop-item " 
+                                href="/php/windows" 
+                                target="_self">
+                                Windows
+                                
+                              </a>
+                            
+                          </div>
+                        
+                    
+                  
+              </div>
+            
+              
+              
+
+              <div class="sql-menutop-sub ">
+                  
+                    
+                      
+                      
+
+                        
+                          <span class="sql-menutop-link">Python </span>
+                        
+
+                        
+                    
+                      
+                      
+
+                        
+
+                        
+                          <div class="sql-menutop-items">
+                            
+                              
+                              
+                              
+
+                              <a class="sql-menutop-item " 
+                                href="/python/mac" 
+                                target="_self">
+                                macOS
+                                
+                              </a>
+                            
+                              
+                              
+                              
+
+                              <a class="sql-menutop-item " 
+                                href="/python/rhel" 
+                                target="_self">
+                                RHEL
+                                
+                              </a>
+                            
+                              
+                              
+                              
+
+                              <a class="sql-menutop-item " 
+                                href="/python/ubuntu" 
+                                target="_self">
+                                Ubuntu
+                                
+                              </a>
+                            
+                              
+                              
+                              
+
+                              <a class="sql-menutop-item " 
+                                href="/python/sles" 
+                                target="_self">
+                                SLES
+                                
+                                  <i class="sql-new"></i>
+                                
+                              </a>
+                            
+                              
+                              
+                              
+
+                              <a class="sql-menutop-item " 
+                                href="/python/windows" 
+                                target="_self">
+                                Windows
+                                
+                              </a>
+                            
+                          </div>
+                        
+                    
+                  
+              </div>
+            
+              
+              
+
+              <div class="sql-menutop-sub ">
+                  
+                    
+                      
+                      
+
+                        
+                          <span class="sql-menutop-link">Ruby </span>
+                        
+
+                        
+                    
+                      
+                      
+
+                        
+
+                        
+                          <div class="sql-menutop-items">
+                            
+                              
+                              
+                              
+
+                              <a class="sql-menutop-item " 
+                                href="/ruby/mac" 
+                                target="_self">
+                                macOS
+                                
+                              </a>
+                            
+                              
+                              
+                              
+
+                              <a class="sql-menutop-item " 
+                                href="/ruby/rhel" 
+                                target="_self">
+                                RHEL
+                                
+                              </a>
+                            
+                              
+                              
+                              
+
+                              <a class="sql-menutop-item " 
+                                href="/ruby/ubuntu" 
+                                target="_self">
+                                Ubuntu
+                                
+                              </a>
+                            
+                              
+                              
+                              
+
+                              <a class="sql-menutop-item " 
+                                href="/ruby/sles" 
+                                target="_self">
+                                SLES
+                                
+                                  <i class="sql-new"></i>
+                                
+                              </a>
+                            
+                              
+                              
+                              
+
+                              <a class="sql-menutop-item " 
+                                href="/ruby/windows" 
+                                target="_self">
+                                Windows
+                                
+                              </a>
+                            
+                          </div>
+                        
+                    
+                  
+              </div>
+            
+          </div>
+        </div>
+
+      
+</header>
+
+
+    <main class="sql-main" aria-label="Content">
+      <div class="u-wrapper">
+        <article class="sql-page_steps">
+
+  
+    
+    
+    
+
+    <h1 class="sql-page_steps-hero">
+      Create Java apps using SQL Server on macOS
+    </h1>
+
+    <header class="sql-page_steps-steps js-stepsheader">
+      
+        
+        
+
+        <div class="sql-page_steps-step">
+          
+            <a class="sql-page_steps-link "
+               href="/java/mac"
+               target="_self">
+               <span class="sql-page_steps-number">1</span>
+               Set up your environment
+              </a>
+          
+        </div>
+      
+        
+        
+
+        <div class="sql-page_steps-step">
+          
+            <a class="sql-page_steps-link  sql-page_steps-link--active "
+               href="/java/mac/step/2"
+               target="_self">
+               <span class="sql-page_steps-number">2</span>
+               Create Java application with SQL server
+            </a>
+          
+        </div>
+      
+        
+        
+
+        <div class="sql-page_steps-step">
+          
+            <a class="sql-page_steps-link "
+               href="/java/mac/step/3"
+               target="_self">
+               <span class="sql-page_steps-number">3</span>
+               Make your Java app up to 100x faster
+            </a>
+          
+        </div>
+      
+    </header>
+  
+
+  <div class="sql-page_steps-loading js-loading">
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <div></div>
+    <div></div>
+    <p></p>
+    <div></div>
+    <div></div>
+    <p></p>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <p></p>
+    <p></p>
+    <div></div>
+    <div></div>
+    <div></div>
+    <p></p>
+    <div></div>
+    <div></div>
+    <p></p>
+    <p></p>
+    <div></div>
+    <div></div>
+    
+  </div>
+
+  <div class="js-steps is-hidden">
+    
+<blockquote>
+  <p>In this section you will create two simple Java apps. One of them will perform basic Insert, Update, Delete, and Select, while the second one will make use of Hibernate, one of the most popular Java Object-relational mappers, to execute the same operations.</p>
+</blockquote>
+
+<h2 id="step-21-create-a-java-app-that-connects-to-sql-server-and-executes-queries">Step 2.1 Create a Java app that connects to SQL Server and executes queries</h2>
+
+<p>In your home directory, create your Maven starter package. This will create the project directory with a basic Maven project and pom.xml file. This step can also be performed in an IDE such as NetBeans or Eclipse.</p>
+
+<div class="language-terminal highlighter-rouge"><pre class="highlight"><code>    mvn archetype:generate "-DgroupId=com.sqlsamples" "-DartifactId=SqlServerSample" "-DarchetypeArtifactId=maven-archetype-quickstart" "-Dversion=1.0.0"
+</code></pre>
+</div>
+<pre><code class="language-results">[INFO] Scanning for projects...
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Maven Stub Project (No POM) 1
+[INFO] ------------------------------------------------------------------------
+...
+...
+[INFO] Total time: 20.272 s
+[INFO] Finished at: 2016-11-03T21:24:28-07:00
+[INFO] Final Memory: 18M/403M
+[INFO] ------------------------------------------------------------------------
+</code></pre>
+<p>Change directories into your newly created project.</p>
+
+<div class="language-terminal highlighter-rouge"><pre class="highlight"><code>    cd SqlServerSample
+</code></pre>
+</div>
+
+<p>Add the Microsoft JDBC Driver for SQL Server dependency to your Maven project by opening your favorite text editor and copying and pasting the following lines into your <strong>pom.xml</strong> file. Do not overwrite the existing values prepopulated in the file. The JDBC dependency must be pasted within the larger “dependencies” section (<dependency> </dependency>).</p>
+
+<p>Specify the version of Java to compile the project against by adding the “properties” section below into the pom.xml file. Add the <properties> section below after the <dependencies> section.</dependencies></properties></p>
+
+<p>Save and close the file.</p>
+
+<p>Using your favorite editor, create a file named connect.js in the SqlServerSample folder. Copy and paste the below contents into the file.</p>
+
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="c">&lt;!-- prepopulated content by Maven --&gt;</span>
+<span class="nt">&lt;dependencies&gt;</span>
+    <span class="nt">&lt;dependency&gt;</span>
+        <span class="nt">&lt;groupId&gt;</span>com.microsoft.sqlserver<span class="nt">&lt;/groupId&gt;</span>
+        <span class="nt">&lt;artifactId&gt;</span>mssql-jdbc<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;version&gt;</span>6.1.0.jre8<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;/dependency&gt;</span>
+    <span class="c">&lt;!-- your existing dependencies --&gt;</span>
+<span class="nt">&lt;/dependencies&gt;</span>
+<span class="nt">&lt;properties&gt;</span>
+    <span class="nt">&lt;maven.compiler.source&gt;</span>1.8<span class="nt">&lt;/maven.compiler.source&gt;</span>
+    <span class="nt">&lt;maven.compiler.target&gt;</span>1.8<span class="nt">&lt;/maven.compiler.target&gt;</span>
+    <span class="c">&lt;!-- your existing properties --&gt;</span>
+<span class="nt">&lt;/properties&gt;</span>
+</code></pre>
+</div>
+<p>You should already have a file called <strong>App.java</strong> in your Maven project located at: SqlServerSample/src/main/java/com/sqlsamples/App.java</p>
+
+<p>Open this file in your favorite text editor and replace the contents with the code below. Don’t forget to replace the username and password with your own. Save and close the file.</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">sqlsamples</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.sql.Connection</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.sql.DriverManager</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">App</span> <span class="o">{</span>
+
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+
+		<span class="n">String</span> <span class="n">connectionUrl</span> <span class="o">=</span> <span class="s">"jdbc:sqlserver://localhost:1433;databaseName=master;user=sa;password=your_password"</span><span class="o">;</span>
+
+		<span class="k">try</span> <span class="o">{</span>
+			<span class="c1">// Load SQL Server JDBC driver and establish connection.</span>
+			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"Connecting to SQL Server ... "</span><span class="o">);</span>
+			<span class="k">try</span> <span class="o">(</span><span class="n">Connection</span> <span class="n">connection</span> <span class="o">=</span> <span class="n">DriverManager</span><span class="o">.</span><span class="na">getConnection</span><span class="o">(</span><span class="n">connectionUrl</span><span class="o">))</span> <span class="o">{</span>
+				<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Done."</span><span class="o">);</span>
+			<span class="o">}</span>
+		<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>
+			<span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+<p>Build the project and create a jar package using the following command:</p>
+<div class="language-terminal highlighter-rouge"><pre class="highlight"><code>    mvn package
+</code></pre>
+</div>
+<pre><code class="language-results">[INFO] Scanning for projects...
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building SqlServerSample 1.0.0
+[INFO] ------------------------------------------------------------------------
+...
+...
+[INFO] Finished at: 2016-11-03T21:33:45-07:00
+[INFO] Final Memory: 16M/371M
+[INFO] ------------------------------------------------------------------------
+</code></pre>
+<p>Now run the application. You can remove the “-q” in the command below to show info messages from Maven.</p>
+
+<div class="language-terminal highlighter-rouge"><pre class="highlight"><code>mvn -q exec:java "-Dexec.mainClass=com.sqlsamples.App"
+</code></pre>
+</div>
+<pre><code class="language-results">Connecting to SQL Server ...
+Done.
+</code></pre>
+<p>Now replace the code in App.java by opening the file in your favorite text editor and copying and pasting the code below into the file. This will create a database and a table, and will insert, update, delete, and read a few rows. Don’t forget to update the username and password with your own. Save and close the file.</p>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">sqlsamples</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.sql.Connection</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.sql.Statement</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.sql.PreparedStatement</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.sql.ResultSet</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.sql.DriverManager</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">App</span> <span class="o">{</span>
+
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Connect to SQL Server and demo Create, Read, Update and Delete operations."</span><span class="o">);</span>
+
+        <span class="c1">//Update the username and password below</span>
+		<span class="n">String</span> <span class="n">connectionUrl</span> <span class="o">=</span> <span class="s">"jdbc:sqlserver://localhost:1433;databaseName=master;user=sa;password=your_password"</span><span class="o">;</span>
+
+		<span class="k">try</span> <span class="o">{</span>
+			<span class="c1">// Load SQL Server JDBC driver and establish connection.</span>
+			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"Connecting to SQL Server ... "</span><span class="o">);</span>
+			<span class="k">try</span> <span class="o">(</span><span class="n">Connection</span> <span class="n">connection</span> <span class="o">=</span> <span class="n">DriverManager</span><span class="o">.</span><span class="na">getConnection</span><span class="o">(</span><span class="n">connectionUrl</span><span class="o">))</span> <span class="o">{</span>
+				<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Done."</span><span class="o">);</span>
+
+				<span class="c1">// Create a sample database</span>
+				<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"Dropping and creating database 'SampleDB' ... "</span><span class="o">);</span>
+				<span class="n">String</span> <span class="n">sql</span> <span class="o">=</span> <span class="s">"DROP DATABASE IF EXISTS [SampleDB]; CREATE DATABASE [SampleDB]"</span><span class="o">;</span>
+				<span class="k">try</span> <span class="o">(</span><span class="n">Statement</span> <span class="n">statement</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="na">createStatement</span><span class="o">())</span> <span class="o">{</span>
+					<span class="n">statement</span><span class="o">.</span><span class="na">executeUpdate</span><span class="o">(</span><span class="n">sql</span><span class="o">);</span>
+					<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Done."</span><span class="o">);</span>
+				<span class="o">}</span>
+
+				<span class="c1">// Create a Table and insert some sample data</span>
+				<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"Creating sample table with data, press ENTER to continue..."</span><span class="o">);</span>
+				<span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">.</span><span class="na">read</span><span class="o">();</span>
+				<span class="n">sql</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">().</span><span class="na">append</span><span class="o">(</span><span class="s">"USE SampleDB; "</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">"CREATE TABLE Employees ( "</span><span class="o">)</span>
+						<span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">" Id INT IDENTITY(1,1) NOT NULL PRIMARY KEY, "</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">" Name NVARCHAR(50), "</span><span class="o">)</span>
+						<span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">" Location NVARCHAR(50) "</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">"); "</span><span class="o">)</span>
+						<span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">"INSERT INTO Employees (Name, Location) VALUES "</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">"(N'Jared', N'Australia'), "</span><span class="o">)</span>
+						<span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">"(N'Nikita', N'India'), "</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">"(N'Tom', N'Germany'); "</span><span class="o">).</span><span class="na">toString</span><span class="o">();</span>
+				<span class="k">try</span> <span class="o">(</span><span class="n">Statement</span> <span class="n">statement</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="na">createStatement</span><span class="o">())</span> <span class="o">{</span>
+					<span class="n">statement</span><span class="o">.</span><span class="na">executeUpdate</span><span class="o">(</span><span class="n">sql</span><span class="o">);</span>
+					<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Done."</span><span class="o">);</span>
+				<span class="o">}</span>
+
+				<span class="c1">// INSERT demo</span>
+				<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"Inserting a new row into table, press ENTER to continue..."</span><span class="o">);</span>
+				<span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">.</span><span class="na">read</span><span class="o">();</span>
+				<span class="n">sql</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">().</span><span class="na">append</span><span class="o">(</span><span class="s">"INSERT Employees (Name, Location) "</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">"VALUES (?, ?);"</span><span class="o">)</span>
+						<span class="o">.</span><span class="na">toString</span><span class="o">();</span>
+				<span class="k">try</span> <span class="o">(</span><span class="n">PreparedStatement</span> <span class="n">statement</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="na">prepareStatement</span><span class="o">(</span><span class="n">sql</span><span class="o">))</span> <span class="o">{</span>
+					<span class="n">statement</span><span class="o">.</span><span class="na">setString</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="s">"Jake"</span><span class="o">);</span>
+					<span class="n">statement</span><span class="o">.</span><span class="na">setString</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="s">"United States"</span><span class="o">);</span>
+					<span class="kt">int</span> <span class="n">rowsAffected</span> <span class="o">=</span> <span class="n">statement</span><span class="o">.</span><span class="na">executeUpdate</span><span class="o">();</span>
+					<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">rowsAffected</span> <span class="o">+</span> <span class="s">" row(s) inserted"</span><span class="o">);</span>
+				<span class="o">}</span>
+
+				<span class="c1">// UPDATE demo</span>
+				<span class="n">String</span> <span class="n">userToUpdate</span> <span class="o">=</span> <span class="s">"Nikita"</span><span class="o">;</span>
+				<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"Updating 'Location' for user '"</span> <span class="o">+</span> <span class="n">userToUpdate</span> <span class="o">+</span> <span class="s">"', press ENTER to continue..."</span><span class="o">);</span>
+				<span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">.</span><span class="na">read</span><span class="o">();</span>
+				<span class="n">sql</span> <span class="o">=</span> <span class="s">"UPDATE Employees SET Location = N'United States' WHERE Name = ?"</span><span class="o">;</span>
+				<span class="k">try</span> <span class="o">(</span><span class="n">PreparedStatement</span> <span class="n">statement</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="na">prepareStatement</span><span class="o">(</span><span class="n">sql</span><span class="o">))</span> <span class="o">{</span>
+					<span class="n">statement</span><span class="o">.</span><span class="na">setString</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="n">userToUpdate</span><span class="o">);</span>
+					<span class="kt">int</span> <span class="n">rowsAffected</span> <span class="o">=</span> <span class="n">statement</span><span class="o">.</span><span class="na">executeUpdate</span><span class="o">();</span>
+					<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">rowsAffected</span> <span class="o">+</span> <span class="s">" row(s) updated"</span><span class="o">);</span>
+				<span class="o">}</span>
+
+				<span class="c1">// DELETE demo</span>
+				<span class="n">String</span> <span class="n">userToDelete</span> <span class="o">=</span> <span class="s">"Jared"</span><span class="o">;</span>
+				<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"Deleting user '"</span> <span class="o">+</span> <span class="n">userToDelete</span> <span class="o">+</span> <span class="s">"', press ENTER to continue..."</span><span class="o">);</span>
+				<span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">.</span><span class="na">read</span><span class="o">();</span>
+				<span class="n">sql</span> <span class="o">=</span> <span class="s">"DELETE FROM Employees WHERE Name = ?;"</span><span class="o">;</span>
+				<span class="k">try</span> <span class="o">(</span><span class="n">PreparedStatement</span> <span class="n">statement</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="na">prepareStatement</span><span class="o">(</span><span class="n">sql</span><span class="o">))</span> <span class="o">{</span>
+					<span class="n">statement</span><span class="o">.</span><span class="na">setString</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="n">userToDelete</span><span class="o">);</span>
+					<span class="kt">int</span> <span class="n">rowsAffected</span> <span class="o">=</span> <span class="n">statement</span><span class="o">.</span><span class="na">executeUpdate</span><span class="o">();</span>
+					<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">rowsAffected</span> <span class="o">+</span> <span class="s">" row(s) deleted"</span><span class="o">);</span>
+				<span class="o">}</span>
+
+				<span class="c1">// READ demo</span>
+				<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"Reading data from table, press ENTER to continue..."</span><span class="o">);</span>
+				<span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">.</span><span class="na">read</span><span class="o">();</span>
+				<span class="n">sql</span> <span class="o">=</span> <span class="s">"SELECT Id, Name, Location FROM Employees;"</span><span class="o">;</span>
+				<span class="k">try</span> <span class="o">(</span><span class="n">Statement</span> <span class="n">statement</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="na">createStatement</span><span class="o">();</span>
+						<span class="n">ResultSet</span> <span class="n">resultSet</span> <span class="o">=</span> <span class="n">statement</span><span class="o">.</span><span class="na">executeQuery</span><span class="o">(</span><span class="n">sql</span><span class="o">))</span> <span class="o">{</span>
+					<span class="k">while</span> <span class="o">(</span><span class="n">resultSet</span><span class="o">.</span><span class="na">next</span><span class="o">())</span> <span class="o">{</span>
+						<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span>
+								<span class="n">resultSet</span><span class="o">.</span><span class="na">getInt</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="n">resultSet</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="mi">2</span><span class="o">)</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="n">resultSet</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="mi">3</span><span class="o">));</span>
+					<span class="o">}</span>
+				<span class="o">}</span>
+
+				<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"All done."</span><span class="o">);</span>
+			<span class="o">}</span>
+		<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>
+			<span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+<p>From the project folder, build the project and create a jar package using the following command:</p>
+<div class="language-terminal highlighter-rouge"><pre class="highlight"><code>mvn package
+</code></pre>
+</div>
+<pre><code class="language-results">[INFO] Scanning for projects...
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building SqlServerSample 1.0.0
+[INFO] ------------------------------------------------------------------------
+...
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ SqlServerSample ---
+[INFO] Building jar: /Users/usr1/SqlServerSample/target/SqlServerSample-1.0.0.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 1.687 s
+[INFO] Finished at: 2016-11-03T22:06:24-07:00
+[INFO] Final Memory: 20M/493M
+[INFO] ------------------------------------------------------------------------
+</code></pre>
+<p>Now run the application. You can remove the “-q” in the command below to show info messages from Maven.</p>
+<div class="language-terminal highlighter-rouge"><pre class="highlight"><code>mvn -q exec:java "-Dexec.mainClass=com.sqlsamples.App"
+</code></pre>
+</div>
+<pre><code class="language-results">Connect to SQL Server and demo Create, Read, Update and Delete operations.
+Connecting to SQL Server ...
+Done.
+Dropping and creating database 'SampleDB' ...
+Done.
+Creating sample table with data, press ENTER to continue...
+Done.
+Inserting a new row into table, press ENTER to continue...
+1 row(s) inserted
+Updating 'Location' for user 'Nikita', press ENTER to continue...
+1 row(s) updated
+Deleting user 'Jared', press ENTER to continue...
+1 row(s) deleted
+Reading data from table, press ENTER to continue...
+2 Nikita United States
+3 Tom Germany
+4 Jake United States
+All done.
+</code></pre>
+<blockquote>
+  <p>You created your first Java + SQL Server app with Maven! Check out the next section to create a Java App using an ORM!</p>
+</blockquote>
+
+<h2 id="step-22-create-a-java-app-that-connects-to-sql-server-using-the-popular-framework-hibernate">Step 2.2 Create a Java app that connects to SQL Server using the popular framework Hibernate</h2>
+
+<p>In your home directory, create your Maven starter package. This will create the project directory with a basic Maven project and pom.xml file. This step can also be performed in an IDE such as NetBeans or Eclipse.</p>
+<div class="language-terminal highlighter-rouge"><pre class="highlight"><code>mvn archetype:generate "-DgroupId=com.sqlsamples" "-DartifactId=SqlServerHibernateSample" "-DarchetypeArtifactId=maven-archetype-quickstart" "-Dversion=1.0.0"
+</code></pre>
+</div>
+<pre><code class="language-results">[INFO] Scanning for projects...
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Maven Stub Project (No POM) 1
+[INFO] ------------------------------------------------------------------------
+...
+[INFO] Using following parameters for creating project from Old (1.x) Archetype: maven-archetype-quickstart:1.0
+[INFO] ----------------------------------------------------------------------------
+[INFO] Parameter: basedir, Value: C:\Users\usr1
+[INFO] Parameter: package, Value: com.sqlsamples
+[INFO] Parameter: artifactId, Value: SqlServerHibernateSample
+[INFO] Parameter: packageName, Value: com.sqlsamples
+[INFO] Parameter: version, Value: 1.0.0
+[INFO] project created from Old (1.x) Archetype in dir: C:\Users\usr1\SqlServerHibernateSample
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 2.945 s
+[INFO] Finished at: 2016-11-03T22:09:08-07:00
+[INFO] Final Memory: 16M/495M
+[INFO] ------------------------------------------------------------------------
+</code></pre>
+<p>Change directories into your newly created project.</p>
+<div class="language-terminal highlighter-rouge"><pre class="highlight"><code>cd SqlServerHibernateSample
+</code></pre>
+</div>
+<p>Add the Microsoft JDBC Driver for SQL Server and Hibernate dependencies to your Maven project by opening your favorite text editor and copying and pasting the following lines into your <strong>pom.xml</strong> file. Do not overwrite the existing values prepopulated in the file. The JDBC and Hibernate dependencies must be pasted within the larger “dependencies” section (<dependency> </dependency>).</p>
+
+<p>Specify the version of Java to compile the project against by adding the “properties” section below into the pom.xml file. Add the <properties> section below after the <dependencies> section.</dependencies></properties></p>
+
+<p>Save and close the file.</p>
+
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="c">&lt;!-- prepopulated content by Maven --&gt;</span>
+<span class="nt">&lt;dependencies&gt;</span>
+    <span class="nt">&lt;dependency&gt;</span>
+        <span class="nt">&lt;groupId&gt;</span>com.microsoft.sqlserver<span class="nt">&lt;/groupId&gt;</span>
+        <span class="nt">&lt;artifactId&gt;</span>mssql-jdbc<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;version&gt;</span>6.1.0.jre8<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;/dependency&gt;</span>
+    <span class="c">&lt;!-- your existing dependencies --&gt;</span>
+<span class="nt">&lt;/dependencies&gt;</span>
+<span class="nt">&lt;properties&gt;</span>
+    <span class="nt">&lt;maven.compiler.source&gt;</span>1.8<span class="nt">&lt;/maven.compiler.source&gt;</span>
+    <span class="nt">&lt;maven.compiler.target&gt;</span>1.8<span class="nt">&lt;/maven.compiler.target&gt;</span>
+    <span class="c">&lt;!-- your existing properties --&gt;</span>
+<span class="nt">&lt;/properties&gt;</span>
+<span class="c">&lt;!-- prepopulated content by Maven --&gt;</span>
+</code></pre>
+</div>
+<p>For this sample, let’s create two tables. The first will hold data about “users”. Create a <strong>User.java</strong> file in your Maven project located at: SqlServerHibernateSample/src/main/java/com/sqlsamples/User.java</p>
+
+<p>Copy and paste the code below into your newly created <strong>User.java</strong> file. Save and close the file.</p>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">sqlsamples</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.*</span><span class="o">;</span>
+
+<span class="nd">@Entity</span>
+<span class="nd">@Table</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"Users"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">User</span> <span class="o">{</span>
+	<span class="nd">@Id</span>
+	<span class="nd">@GeneratedValue</span><span class="o">(</span><span class="n">strategy</span> <span class="o">=</span> <span class="n">GenerationType</span><span class="o">.</span><span class="na">IDENTITY</span><span class="o">)</span>
+	<span class="kd">private</span> <span class="n">Long</span> <span class="n">id</span><span class="o">;</span>
+	<span class="kd">private</span> <span class="n">String</span> <span class="n">firstName</span><span class="o">;</span>
+	<span class="kd">private</span> <span class="n">String</span> <span class="n">lastName</span><span class="o">;</span>
+
+	<span class="c1">// Specify a 1:Many mapping between User and Task via the "user" field in</span>
+	<span class="c1">// the "Tasks" class.</span>
+	<span class="nd">@OneToMany</span><span class="o">(</span><span class="n">mappedBy</span> <span class="o">=</span> <span class="s">"user"</span><span class="o">,</span> <span class="n">cascade</span> <span class="o">=</span> <span class="n">CascadeType</span><span class="o">.</span><span class="na">ALL</span><span class="o">)</span>
+	<span class="kd">private</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Task</span><span class="o">&gt;</span> <span class="n">tasks</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Task</span><span class="o">&gt;();</span>
+
+	<span class="kd">public</span> <span class="nf">User</span><span class="o">()</span> <span class="o">{</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="nf">User</span><span class="o">(</span><span class="n">String</span> <span class="n">firstName</span><span class="o">,</span> <span class="n">String</span> <span class="n">lastName</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">firstName</span> <span class="o">=</span> <span class="n">firstName</span><span class="o">;</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">lastName</span> <span class="o">=</span> <span class="n">lastName</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="n">Long</span> <span class="nf">getId</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">id</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setId</span><span class="o">(</span><span class="n">Long</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">id</span> <span class="o">=</span> <span class="n">id</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="n">String</span> <span class="nf">getFirstName</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">firstName</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setFirstName</span><span class="o">(</span><span class="n">String</span> <span class="n">firstName</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">firstName</span> <span class="o">=</span> <span class="n">firstName</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="n">String</span> <span class="nf">getLastName</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">lastName</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setLastName</span><span class="o">(</span><span class="n">String</span> <span class="n">lastName</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">lastName</span> <span class="o">=</span> <span class="n">lastName</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="n">String</span> <span class="nf">getFullName</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">firstName</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="k">this</span><span class="o">.</span><span class="na">lastName</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Task</span><span class="o">&gt;</span> <span class="nf">getTasks</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">tasks</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setTasks</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Task</span><span class="o">&gt;</span> <span class="n">tasks</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">tasks</span> <span class="o">=</span> <span class="n">tasks</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="s">"User [id="</span> <span class="o">+</span> <span class="k">this</span><span class="o">.</span><span class="na">id</span> <span class="o">+</span> <span class="s">", name="</span> <span class="o">+</span> <span class="k">this</span><span class="o">.</span><span class="na">getFullName</span><span class="o">()</span> <span class="o">+</span> <span class="s">"]"</span><span class="o">;</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+<p>Let’s create a second table to assign tasks to users. Create a <strong>Task.java</strong> file in your Maven project located at: SqlServerHibernateSample/src/main/java/com/sqlsamples/Task.java.</p>
+
+<p>Copy and paste the code below into your newly created <strong>Task.java</strong> file. Save and close the file.</p>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">sqlsamples</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Date</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.*</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.text.SimpleDateFormat</span><span class="o">;</span>
+
+<span class="nd">@Entity</span>
+<span class="nd">@Table</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"Tasks"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Task</span> <span class="o">{</span>
+	<span class="nd">@Id</span>
+	<span class="nd">@GeneratedValue</span><span class="o">(</span><span class="n">strategy</span> <span class="o">=</span> <span class="n">GenerationType</span><span class="o">.</span><span class="na">IDENTITY</span><span class="o">)</span>
+	<span class="kd">private</span> <span class="n">Long</span> <span class="n">id</span><span class="o">;</span>
+	<span class="kd">private</span> <span class="n">String</span> <span class="n">title</span><span class="o">;</span>
+	<span class="kd">private</span> <span class="n">Boolean</span> <span class="n">isComplete</span><span class="o">;</span>
+	<span class="nd">@Temporal</span><span class="o">(</span><span class="n">TemporalType</span><span class="o">.</span><span class="na">TIMESTAMP</span><span class="o">)</span>
+	<span class="kd">private</span> <span class="n">Date</span> <span class="n">dueDate</span><span class="o">;</span>
+
+	<span class="c1">// Specify a Many:1 mapping between Task and User</span>
+	<span class="nd">@ManyToOne</span>
+	<span class="kd">private</span> <span class="n">User</span> <span class="n">user</span><span class="o">;</span>
+
+	<span class="kd">public</span> <span class="nf">Task</span><span class="o">()</span> <span class="o">{</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="nf">Task</span><span class="o">(</span><span class="n">String</span> <span class="n">title</span><span class="o">,</span> <span class="n">Date</span> <span class="n">dueDate</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">title</span> <span class="o">=</span> <span class="n">title</span><span class="o">;</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">dueDate</span> <span class="o">=</span> <span class="n">dueDate</span><span class="o">;</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">isComplete</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="nf">Task</span><span class="o">(</span><span class="n">String</span> <span class="n">title</span><span class="o">,</span> <span class="n">Date</span> <span class="n">dueDate</span><span class="o">,</span> <span class="n">User</span> <span class="n">user</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">title</span> <span class="o">=</span> <span class="n">title</span><span class="o">;</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">dueDate</span> <span class="o">=</span> <span class="n">dueDate</span><span class="o">;</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">isComplete</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">user</span> <span class="o">=</span> <span class="n">user</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="n">Long</span> <span class="nf">getId</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">id</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setId</span><span class="o">(</span><span class="n">Long</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">id</span> <span class="o">=</span> <span class="n">id</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="n">String</span> <span class="nf">getTitle</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">title</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setTitle</span><span class="o">(</span><span class="n">String</span> <span class="n">title</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">title</span> <span class="o">=</span> <span class="n">title</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="n">User</span> <span class="nf">getUser</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">user</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setUser</span><span class="o">(</span><span class="n">User</span> <span class="n">user</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">user</span> <span class="o">=</span> <span class="n">user</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="n">Date</span> <span class="nf">getDueDate</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">dueDate</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setDueDate</span><span class="o">(</span><span class="n">Date</span> <span class="n">dueDate</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">dueDate</span> <span class="o">=</span> <span class="n">dueDate</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span>
+		<span class="n">SimpleDateFormat</span> <span class="n">ft</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleDateFormat</span><span class="o">(</span><span class="s">"E yyyy.MM.dd 'at' hh:mm:ss a zzz"</span><span class="o">);</span>
+		<span class="k">return</span> <span class="s">"Task [id="</span> <span class="o">+</span> <span class="k">this</span><span class="o">.</span><span class="na">id</span> <span class="o">+</span> <span class="s">", title="</span> <span class="o">+</span> <span class="k">this</span><span class="o">.</span><span class="na">title</span> <span class="o">+</span> <span class="s">", dueDate="</span> <span class="o">+</span> <span class="n">ft</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">dueDate</span><span class="o">)</span>
+				<span class="o">+</span> <span class="s">", isComplete="</span> <span class="o">+</span> <span class="k">this</span><span class="o">.</span><span class="na">isComplete</span><span class="o">.</span><span class="na">toString</span><span class="o">()</span> <span class="o">+</span> <span class="s">"]"</span><span class="o">;</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+<p>Replace the code in the <strong>App.java</strong> file in your Maven project located at: SqlServerHibernateSample/src/main/java/com/sqlsamples/App.java.</p>
+
+<p>Open this file in your favorite text editor and replace the contents with the code below. Don’t forget to update the username and password with your own. Save and close the file.</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">sqlsamples</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.sql.Connection</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.sql.Statement</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.sql.DriverManager</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.text.SimpleDateFormat</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.hibernate.Session</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.hibernate.SessionFactory</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.hibernate.cfg.Configuration</span><span class="o">;</span>
+
+<span class="cm">/**
+ * Java CRUD sample with Hibernate and SQL Server
+ *
+ */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">App</span> <span class="o">{</span>
+	<span class="n">String</span> <span class="n">connectionUrl</span> <span class="o">=</span> <span class="s">"jdbc:sqlserver://localhost:1433"</span><span class="o">;</span> <span class="c1">// update me</span>
+	<span class="n">String</span> <span class="n">userName</span> <span class="o">=</span> <span class="s">"sa"</span><span class="o">;</span> <span class="c1">// update me</span>
+	<span class="n">String</span> <span class="n">password</span> <span class="o">=</span> <span class="s">"your_password"</span><span class="o">;</span> <span class="c1">// update me</span>
+	<span class="n">String</span> <span class="n">sampleDatabaseName</span> <span class="o">=</span> <span class="s">"SampleDB"</span><span class="o">;</span>
+
+	<span class="c1">// Main entry point</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">App</span> <span class="n">app</span> <span class="o">=</span> <span class="k">new</span> <span class="n">App</span><span class="o">();</span>
+		<span class="n">app</span><span class="o">.</span><span class="na">runDemo</span><span class="o">();</span>
+	<span class="o">}</span>
+
+	<span class="c1">// Helper to run the demp app</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">runDemo</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="c1">// Configure Hibernate logging to only log SEVERE errors</span>
+        <span class="nd">@SuppressWarnings</span><span class="o">(</span><span class="s">"unused"</span><span class="o">)</span>
+        <span class="n">org</span><span class="o">.</span><span class="na">jboss</span><span class="o">.</span><span class="na">logging</span><span class="o">.</span><span class="na">Logger</span> <span class="n">logger</span> <span class="o">=</span> <span class="n">org</span><span class="o">.</span><span class="na">jboss</span><span class="o">.</span><span class="na">logging</span><span class="o">.</span><span class="na">Logger</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="s">"org.hibernate"</span><span class="o">);</span>
+        <span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">logging</span><span class="o">.</span><span class="na">Logger</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="s">"org.hibernate"</span><span class="o">).</span><span class="na">setLevel</span><span class="o">(</span><span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">logging</span><span class="o">.</span><span class="na">Level</span><span class="o">.</span><span class="na">SEVERE</span><span class="o">);</span>
+
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"**Java CRUD sample with Hibernate and SQL Server **\n"</span><span class="o">);</span>
+		<span class="k">try</span> <span class="o">{</span>
+            <span class="c1">// We're creating the Hibernate configuration via code. An alternative is to use a 'hibernate.cfg.xml' file.</span>
+            <span class="n">Configuration</span> <span class="n">cfg</span> <span class="o">=</span> <span class="n">createHibernateConfiguration</span><span class="o">();</span>
+
+            <span class="c1">// We're mapping POJO classes to Tables via Hibernate Annotations. An alternative is to use Hibernate mapping xml files.</span>
+            <span class="n">cfg</span><span class="o">.</span><span class="na">addAnnotatedClass</span><span class="o">(</span><span class="n">User</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+            <span class="n">cfg</span><span class="o">.</span><span class="na">addAnnotatedClass</span><span class="o">(</span><span class="n">Task</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+
+            <span class="c1">// Hibernate needs an existing database. Use JDBC to create one for this sample.</span>
+            <span class="n">createSampleDatabase</span><span class="o">();</span>
+
+            <span class="c1">// Create the Hibernate SessionFactory and Session.</span>
+            <span class="c1">// This causes Hibernate to create Tables and Relationships in the database from our Annotated classes.</span>
+            <span class="k">try</span> <span class="o">(</span><span class="n">SessionFactory</span> <span class="n">sessionFactory</span> <span class="o">=</span> <span class="n">cfg</span><span class="o">.</span><span class="na">buildSessionFactory</span><span class="o">();</span>
+                 <span class="n">Session</span> <span class="n">session</span> <span class="o">=</span> <span class="n">sessionFactory</span><span class="o">.</span><span class="na">openSession</span><span class="o">())</span> <span class="o">{</span>
+
+                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Created database schema from Java classes.\n"</span><span class="o">);</span>
+                <span class="n">session</span><span class="o">.</span><span class="na">beginTransaction</span><span class="o">();</span>
+
+                <span class="c1">// Create demo: Create a User instance and save it to the database</span>
+                <span class="n">User</span> <span class="n">newUser</span> <span class="o">=</span> <span class="k">new</span> <span class="n">User</span><span class="o">(</span><span class="s">"Anna"</span><span class="o">,</span> <span class="s">"Shrestinian"</span><span class="o">);</span>
+                <span class="n">session</span><span class="o">.</span><span class="na">save</span><span class="o">(</span><span class="n">newUser</span><span class="o">);</span>
+                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Created User: "</span> <span class="o">+</span> <span class="n">newUser</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+
+                <span class="c1">// Create demo: Create a Task instance and save it to the database</span>
+                <span class="n">SimpleDateFormat</span> <span class="n">sdf</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleDateFormat</span><span class="o">(</span><span class="s">"MM-dd-yyyy"</span><span class="o">);</span>
+                <span class="n">Task</span> <span class="n">newTask</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Task</span><span class="o">(</span><span class="s">"Ship Helsinki"</span><span class="o">,</span> <span class="n">sdf</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="s">"04-01-2017"</span><span class="o">));</span>
+                <span class="n">session</span><span class="o">.</span><span class="na">save</span><span class="o">(</span><span class="n">newTask</span><span class="o">);</span>
+                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Created Task: "</span> <span class="o">+</span> <span class="n">newTask</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+
+                <span class="c1">// Association demo: Assign task to user</span>
+                <span class="n">newTask</span><span class="o">.</span><span class="na">setUser</span><span class="o">(</span><span class="n">newUser</span><span class="o">);</span>
+                <span class="n">session</span><span class="o">.</span><span class="na">save</span><span class="o">(</span><span class="n">newTask</span><span class="o">);</span>
+                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Assigned Task: '"</span> <span class="o">+</span> <span class="n">newTask</span><span class="o">.</span><span class="na">getTitle</span><span class="o">()</span> <span class="o">+</span> <span class="s">"' to user '"</span> <span class="o">+</span> <span class="n">newUser</span><span class="o">.</span><span class="na">getFullName</span><span class="o">()</span> <span class="o">+</span> <span class="s">"'\n"</span><span class="o">);</span>
+
+                <span class="c1">// Read demo: find incomplete tasks assigned to user 'Anna'</span>
+                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Incomplete tasks assigned to 'Anna':"</span><span class="o">);</span>
+                <span class="n">String</span> <span class="n">hqlQuery</span> <span class="o">=</span> <span class="s">"from Task where isComplete = false and user.firstName = :paramFirstName"</span><span class="o">;</span>
+                <span class="n">List</span><span class="o">&lt;</span><span class="n">Task</span><span class="o">&gt;</span> <span class="n">incompleteTasks</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="na">createQuery</span><span class="o">(</span><span class="n">hqlQuery</span><span class="o">,</span> <span class="n">Task</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+                                             <span class="o">.</span><span class="na">setParameter</span><span class="o">(</span><span class="s">"paramFirstName"</span><span class="o">,</span> <span class="s">"Anna"</span><span class="o">)</span>
+                                             <span class="o">.</span><span class="na">getResultList</span><span class="o">();</span>
+                <span class="k">for</span><span class="o">(</span><span class="n">Task</span> <span class="n">theTask</span> <span class="o">:</span> <span class="n">incompleteTasks</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">theTask</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+                <span class="o">}</span>
+
+                <span class="c1">// Update demo: change the 'dueDate' of a task</span>
+                <span class="n">hqlQuery</span> <span class="o">=</span> <span class="s">"from Task"</span><span class="o">;</span>
+                <span class="n">Task</span> <span class="n">taskToUpdate</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="na">createQuery</span><span class="o">(</span><span class="n">hqlQuery</span><span class="o">,</span> <span class="n">Task</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+                                    <span class="o">.</span><span class="na">getResultList</span><span class="o">()</span>
+                                    <span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span> <span class="c1">// get the first task</span>
+                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"\nUpdating task: "</span> <span class="o">+</span> <span class="n">taskToUpdate</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+                <span class="n">taskToUpdate</span><span class="o">.</span><span class="na">setDueDate</span><span class="o">(</span><span class="n">sdf</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="s">"06-30-2016"</span><span class="o">));</span>
+                <span class="n">session</span><span class="o">.</span><span class="na">save</span><span class="o">(</span><span class="n">taskToUpdate</span><span class="o">);</span>
+                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"dueDate changed: "</span> <span class="o">+</span> <span class="n">taskToUpdate</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+
+                <span class="c1">// Delete demo: delete all tasks with a dueDate in 2016</span>
+                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"\nDeleting all tasks with a dueDate in 2016"</span><span class="o">);</span>
+                <span class="n">hqlQuery</span> <span class="o">=</span> <span class="s">"from Task where dueDate &lt; :paramDate"</span><span class="o">;</span>
+                <span class="n">List</span><span class="o">&lt;</span><span class="n">Task</span><span class="o">&gt;</span> <span class="n">tasksToDelete</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="na">createQuery</span><span class="o">(</span><span class="n">hqlQuery</span><span class="o">,</span> <span class="n">Task</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+                                           <span class="o">.</span><span class="na">setParameter</span><span class="o">(</span><span class="s">"paramDate"</span><span class="o">,</span> <span class="n">sdf</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="s">"12-31-2016"</span><span class="o">))</span>
+                                           <span class="o">.</span><span class="na">getResultList</span><span class="o">();</span>
+                <span class="k">for</span><span class="o">(</span><span class="n">Task</span> <span class="n">theTask</span> <span class="o">:</span> <span class="n">tasksToDelete</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Deleting task:"</span> <span class="o">+</span> <span class="n">theTask</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+                    <span class="n">session</span><span class="o">.</span><span class="na">delete</span><span class="o">(</span><span class="n">theTask</span><span class="o">);</span>
+                <span class="o">}</span>
+
+                <span class="c1">// Show tasks after the 'Delete' operation - there should be 0 tasks</span>
+                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"\nTasks after delete:"</span><span class="o">);</span>
+                <span class="n">hqlQuery</span> <span class="o">=</span> <span class="s">"from Task"</span><span class="o">;</span>
+                <span class="n">List</span><span class="o">&lt;</span><span class="n">Task</span><span class="o">&gt;</span> <span class="n">tasksAfterDelete</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="na">createQuery</span><span class="o">(</span><span class="n">hqlQuery</span><span class="o">,</span> <span class="n">Task</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+                                              <span class="o">.</span><span class="na">getResultList</span><span class="o">();</span>
+                <span class="k">if</span><span class="o">(</span><span class="n">tasksAfterDelete</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span> <span class="o">{</span>
+                    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"[None]"</span><span class="o">);</span>
+                <span class="o">}</span>
+                <span class="k">else</span> <span class="o">{</span>
+                    <span class="k">for</span><span class="o">(</span><span class="n">Task</span> <span class="n">theTask</span> <span class="o">:</span> <span class="n">tasksAfterDelete</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">theTask</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+                    <span class="o">}</span>
+                <span class="o">}</span>
+
+                <span class="n">session</span><span class="o">.</span><span class="na">getTransaction</span><span class="o">().</span><span class="na">commit</span><span class="o">();</span>
+            <span class="o">}</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"All done."</span><span class="o">);</span>
+
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>
+            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+	<span class="c1">// Hibernate needs an existing database. Use JDBC to create one for this</span>
+	<span class="c1">// sample.</span>
+	<span class="kd">private</span> <span class="kt">void</span> <span class="nf">createSampleDatabase</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">java</span><span class="o">.</span><span class="na">sql</span><span class="o">.</span><span class="na">SQLException</span> <span class="o">{</span>
+		<span class="c1">// Load SQL Server JDBC driver and establish connection.</span>
+		<span class="n">String</span> <span class="n">url</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">connectionUrl</span> <span class="o">+</span> <span class="s">";databaseName=master;"</span> <span class="o">+</span> <span class="s">"user="</span> <span class="o">+</span> <span class="k">this</span><span class="o">.</span><span class="na">userName</span> <span class="o">+</span> <span class="s">";password="</span>
+				<span class="o">+</span> <span class="k">this</span><span class="o">.</span><span class="na">password</span><span class="o">;</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"Connecting to SQL Server ... "</span><span class="o">);</span>
+		<span class="k">try</span> <span class="o">(</span><span class="n">Connection</span> <span class="n">connection</span> <span class="o">=</span> <span class="n">DriverManager</span><span class="o">.</span><span class="na">getConnection</span><span class="o">(</span><span class="n">url</span><span class="o">))</span> <span class="o">{</span>
+			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Done."</span><span class="o">);</span>
+
+			<span class="c1">// Create a sample database</span>
+			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"Dropping and creating database '"</span> <span class="o">+</span> <span class="k">this</span><span class="o">.</span><span class="na">sampleDatabaseName</span> <span class="o">+</span> <span class="s">"' ... "</span><span class="o">);</span>
+			<span class="n">String</span> <span class="n">sql</span> <span class="o">=</span> <span class="s">"DROP DATABASE IF EXISTS ["</span> <span class="o">+</span> <span class="k">this</span><span class="o">.</span><span class="na">sampleDatabaseName</span> <span class="o">+</span> <span class="s">"]; CREATE DATABASE ["</span>
+					<span class="o">+</span> <span class="k">this</span><span class="o">.</span><span class="na">sampleDatabaseName</span> <span class="o">+</span> <span class="s">"]"</span><span class="o">;</span>
+			<span class="k">try</span> <span class="o">(</span><span class="n">Statement</span> <span class="n">statement</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="na">createStatement</span><span class="o">())</span> <span class="o">{</span>
+				<span class="n">statement</span><span class="o">.</span><span class="na">executeUpdate</span><span class="o">(</span><span class="n">sql</span><span class="o">);</span>
+				<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Done.\n"</span><span class="o">);</span>
+			<span class="o">}</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+
+	<span class="c1">// Create Hibernate configuration via code instead of using a</span>
+	<span class="c1">// 'hibernate.cfg.xml' file.</span>
+	<span class="kd">private</span> <span class="n">Configuration</span> <span class="nf">createHibernateConfiguration</span><span class="o">()</span> <span class="o">{</span>
+		<span class="n">String</span> <span class="n">url</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">connectionUrl</span> <span class="o">+</span> <span class="s">";databaseName="</span> <span class="o">+</span> <span class="k">this</span><span class="o">.</span><span class="na">sampleDatabaseName</span><span class="o">;</span>
+        <span class="n">Configuration</span> <span class="n">cfg</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Configuration</span><span class="o">()</span>
+				<span class="o">.</span><span class="na">setProperty</span><span class="o">(</span><span class="s">"hibernate.connection.driver_class"</span><span class="o">,</span> <span class="s">"com.microsoft.sqlserver.jdbc.SQLServerDriver"</span><span class="o">)</span>
+				<span class="o">.</span><span class="na">setProperty</span><span class="o">(</span><span class="s">"hibernate.connection.url"</span><span class="o">,</span> <span class="n">url</span><span class="o">)</span>
+				<span class="o">.</span><span class="na">setProperty</span><span class="o">(</span><span class="s">"hibernate.connection.username"</span><span class="o">,</span> <span class="k">this</span><span class="o">.</span><span class="na">userName</span><span class="o">)</span>
+				<span class="o">.</span><span class="na">setProperty</span><span class="o">(</span><span class="s">"hibernate.connection.password"</span><span class="o">,</span> <span class="k">this</span><span class="o">.</span><span class="na">password</span><span class="o">)</span>
+				<span class="o">.</span><span class="na">setProperty</span><span class="o">(</span><span class="s">"hibernate.connection.autocommit"</span><span class="o">,</span> <span class="s">"true"</span><span class="o">)</span>
+				<span class="o">.</span><span class="na">setProperty</span><span class="o">(</span><span class="s">"hibernate.show_sql"</span><span class="o">,</span> <span class="s">"false"</span><span class="o">);</span>
+
+		<span class="c1">// Tell Hibernate to use the 'SQL Server' dialect when dynamically</span>
+		<span class="c1">// generating SQL queries</span>
+		<span class="n">cfg</span><span class="o">.</span><span class="na">setProperty</span><span class="o">(</span><span class="s">"hibernate.dialect"</span><span class="o">,</span> <span class="s">"org.hibernate.dialect.SQLServerDialect"</span><span class="o">);</span>
+
+		<span class="c1">// Tell Hibernate to show the generated T-SQL</span>
+		<span class="n">cfg</span><span class="o">.</span><span class="na">setProperty</span><span class="o">(</span><span class="s">"hibernate.show_sql"</span><span class="o">,</span> <span class="s">"false"</span><span class="o">);</span>
+
+		<span class="c1">// This is ok during development, but not recommended in production</span>
+		<span class="c1">// See: http://stackoverflow.com/questions/221379/hibernate-hbm2ddl-auto-update-in-production</span>
+		<span class="n">cfg</span><span class="o">.</span><span class="na">setProperty</span><span class="o">(</span><span class="s">"hibernate.hbm2ddl.auto"</span><span class="o">,</span> <span class="s">"update"</span><span class="o">);</span>
+		<span class="k">return</span> <span class="n">cfg</span><span class="o">;</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+<p>From the project folder, build the project and create a jar package using the following command:</p>
+<div class="language-terminal highlighter-rouge"><pre class="highlight"><code>mvn package
+</code></pre>
+</div>
+<pre><code class="language-results">[INFO] Scanning for projects...
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building SqlServerHibernateSample 1.0.0
+[INFO] ------------------------------------------------------------------------
+...
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ SqlServerHibernateSample ---
+[INFO] Building jar: 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 1.834 s
+[INFO] Finished at: 2016-11-03T22:18:00-07:00
+[INFO] Final Memory: 22M/498M
+[INFO] ------------------------------------------------------------------------
+</code></pre>
+<p>Now run the application. You can remove the “-q” in the command below to show info messages from Maven.</p>
+<div class="language-terminal highlighter-rouge"><pre class="highlight"><code>mvn -q exec:java "-Dexec.mainClass=com.sqlsamples.App"
+</code></pre>
+</div>
+<pre><code class="language-results">**Java CRUD sample with Hibernate and SQL Server **
+
+Connecting to SQL Server ... Done.
+Dropping and creating database 'HibernateSampleDB' ... Done.
+
+Created database schema from Java classes.
+
+Created User: User [id=1, name=Anna Shrestinian]
+Created Task: Task [id=1, title=Ship Helsinki, dueDate=Sat 2017.04.01 at 12:00:00 AM PDT, isComplete=false]
+Assigned Task: 'Ship Helsinki' to user 'Anna Shrestinian'
+
+Incomplete tasks assigned to 'Anna':
+Task [id=1, title=Ship Helsinki, dueDate=Sat 2017.04.01 at 12:00:00 AM PDT, isComplete=false]
+
+Updating task: Task [id=1, title=Ship Helsinki, dueDate=Sat 2017.04.01 at 12:00:00 AM PDT, isComplete=false]
+dueDate changed: Task [id=1, title=Ship Helsinki, dueDate=Thu 2016.06.30 at 12:00:00 AM PDT, isComplete=false]
+
+Deleting all tasks with a dueDate in 2016
+Deleting task:Task [id=1, title=Ship Helsinki, dueDate=Thu 2016.06.30 at 12:00:00 AM PDT, isComplete=false]
+
+Tasks after delete:
+[None]
+All done.
+</code></pre>
+<blockquote>
+  <p>Congrats you created your first two Java apps with SQL Server! Check out the next section to learn about how you can make your Java apps faster with SQL Server’s Columnstore feature</p>
+</blockquote>
+
+
+  </div>
+
+  
+    
+    
+      
+
+      
+
+      <a class="sql-page_steps-next"
+        href="/java/mac/step/3"
+        target="_self">
+        Go to step 3
+      </a>
+
+    
+  
+
+  <div class="sql-questions">
+    <h2 class="sql-questions-title">
+        Have Questions?
+    </h2>
+    <p class="sql-questions-text">
+        Happy to help! You can find us on <a href="https://github.com/Microsoft/sql-server-samples/tree/master/samples/tutorials" target="_blank">GitHub</a>, <a href="https://social.msdn.microsoft.com/Forums/en-US/home target="_blank"">MSDN Forums</a>, and StackOverflow. We also monitor the <a href="https://twitter.com/search?q=%23SQLServerDev&amp;src=typd" target="_blank">#SQLServerDev</a> hashtag on Twitter.
+    </p>
+</div>
+
+  
+      <footer class="sql-disqus">
+        
+
+      </footer>
+  
+</article>
+
+      </div>
+    </main>
+
+    <footer class="sql-footer">
+  
+
+
+
+
+    <div class="sql-footer-copy">
+        <a class="sql-footer-link" href="https://go.microsoft.com/?linkid=2028325">Contact us</a> | 
+        <a class="sql-footer-link" href="https://go.microsoft.com/fwlink/?LinkId=521839">Privacy & cookies</a> | 
+        <a class="sql-footer-link" href="https://go.microsoft.com/fwlink/?LinkID=206977">Terms of use</a> | 
+        <a class="sql-footer-link" href="https://www.microsoft.com/trademarks">Trademarks</a> | 
+        <a class="sql-footer-link" href="https://choice.microsoft.com/">About our ads</a> | 
+        © 2017 Microsoft 
+      <!--
+        <a href="#" target="_blank" class="sql-footer-icon fa fa-twitter" aria-hidden="true" style="float:right;"></a>
+        <a href="#" target="_blank" class="sql-footer-icon fa fa-github" aria-hidden="true" style="float:right;"></a>
+      -->
+    </div>
+
+           
+</footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.6.0/clipboard.min.js" type="text/javascript"></script>
+<script src="https://use.fontawesome.com/c7b2a63f93.js"></script>
+<script src="/assets/scripts/prism.js" type="text/javascript"></script>
+<script src="/assets/scripts/steps.js" type="text/javascript"></script>
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'Microsoft/mssql-developers'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+  </body>
+
+</html>
