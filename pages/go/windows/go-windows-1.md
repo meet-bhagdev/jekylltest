@@ -1,17 +1,21 @@
 ---
 layout: page-steps
-language: C#
+language: Go
 title: Windows
-permalink: /csharp/windows/
+permalink: /go/windows/
 redirect_from:
-  - /csharp/
-  - /csharp/windows/step/
-  - /csharp/windows/step/1
+  - /go/
+  - /go/windows/step/
+  - /go/windows/step/1
 ---
 
+<<<<<<< HEAD
+> In this section, you will get SQL Server vNext running on Windows. After that you will install the necessary dependencies to create Go apps with SQL Server.
+=======
 > In this section, you will get SQL Server vNext running on Docker. After that you will install the necessary dependencies to run .NET Core.
+>>>>>>> parent of 81a773d... Edit first sentence for tutorials step 1
 
-## Step 1.1 Install SQL Server
+## Step 1.1 Install SQL Server on Windows 10
 {% include partials/install_sql_server_windows.md %}
 
 ## Step 1.2 Install Visual Studio Community Edition and .NET Framework
